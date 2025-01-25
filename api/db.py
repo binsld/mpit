@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, SmallInteger, CHAR, DateTime, Boolean
-from sqlalchemy.orm import relationship, backref, sessionmaker, joinedload, declarative_base
-from config import DB_URL
+from sqlalchemy.orm import sessionmaker, declarative_base
+from api.config import DB_URL
 
 engine = create_engine(DB_URL, echo=False)
 Base = declarative_base()
