@@ -15,14 +15,15 @@ def ask_states(user_db_data, msg):
         if bool(re.fullmatch(r"[А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+", msg.text)):
             bot.send_message(msg.chat.id, "Отправьте номер телефона")
             db.session.query(db.User).filter(db.User.telegram_id == msg.from_user.id). \
-                update({'state': 2})
+                update({'state': 2, 'fio':msg.text})
             db.session.commit()
         else:
             bot.send_message(msg.chat.id, "Неверный формат данных. Отправьте ФИО.")
     elif user_db_data.state == 2:
-        if bool(re.fullmatch(r"8\d{10}", msg.text)) or bool(re.fullmatch(r"\+7\d{10}", msg.text)):
-            bot.send_message(msg.chat.id, "Готово. Вы зарегистрированы.")
-            db.session.query(db.User).filter(db.User.telegram_id == msg.from_user.id).update({'state': 3})
+        if bool(re.fullmatch(r"\+?[87]\d{10}", msg.text)):
+            bot.send_message(msg.chat.id, "Готово. Вы зарегистрированы. Ожидайте, пока организаторы подтвердят "
+                                          "вашу запись")
+            db.session.query(db.User).filter(db.User.telegram_id == msg.from_user.id).update({'state': 3, 'phone':msg.text})
             db.session.commit()
         else:
             bot.send_message(msg.chat.id, "Неверный формат данных. Отправьте российский номер телефона.")
