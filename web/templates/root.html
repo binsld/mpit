@@ -5,27 +5,23 @@
     <title>Неймаркет</title>
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
     <script>
-        async function getData()
-        {
-            fetch('http://example.com/movies.json')
-              .then((response) => {
-                return response.json();
-              })
-              .then((data) => {
-                console.log(data);
-              });
-        }
         var app = window.Telegram.WebApp;
     </script>
 </head>
 <body>
     <p>Hello, world</p>
     <p id="ident">Ваш id</p>
+    <p id="username">Ваш username</p>
+    <p id="theme">Тёмная тема</p>
     <script>
-
         app.ready();
         const i_am = app.initDataUnsafe.user;
-        document.getElementById("ident").textContent = i_am.id;
+        document.getElementById("ident").textContent = "Ваш id: "+i_am.id;
+        document.getElementById("username").textContent = "Ваш username: "+i_am.username;
+        if (app.colorScheme == "light") document.getElementById("theme").textContent = "Светлая тема";
+        console.log(app.initDataUnsafe);
+        app.ready();
+
     </script>
 </body>
 </html>

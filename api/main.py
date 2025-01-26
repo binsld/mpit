@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from db import session, User
+import db
 app = FastAPI()
 
 
@@ -9,5 +9,8 @@ async def root():
 
 @app.get("/whoami/{identificator}")
 async def whoami(identificator):
-    return
+    return db.session.query(db.User).filter(db.User.telegram_id==identificator).first()
 
+@app.post("/new-event")
+async def new_event(username: str, password: str):
+    return print(username, password)

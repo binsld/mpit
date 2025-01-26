@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, SmallInteger, CHAR, DateTime, Boolean
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, SmallInteger, CHAR, DateTime, Boolean, BigInteger
 from sqlalchemy.orm import sessionmaker, declarative_base
 from config import DB_URL
 
@@ -10,13 +10,15 @@ class User(Base):
 
     telegram_id = Column(Integer, primary_key=True)
     telegram_username = Column(String(32), nullable=True)
-    name = Column(String(64), nullable=True)
+    fio = Column(String(64), nullable=True)
+    phone = Column(BigInteger(), nullable=True)
     coins = Column(SmallInteger, default=0)
     type = Column(CHAR) # OBAMU классификация (B-anned O-utsider U-ser M-oderator A-dministration)
+    state = Column(SmallInteger) # 1 - ожидание фио
 
     def __repr__(self):
-       return "<User(telegram_id='%s', telegram_username='%s', name='%s', coins='%s', type='%s')>" % (
-                            self.telegram_id, self.telegram_username, self.name, self.coins, self.type)
+       return "<User(telegram_id='%s', telegram_username='%s', fio='%s', phone='%s', coins='%s', type='%s')>" % (
+                            self.telegram_id, self.telegram_username, self.fio, self.phone, self.coins, self.type)
 
 class Event(Base):
     __tablename__ = 'events'
