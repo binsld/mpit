@@ -60,6 +60,7 @@ class Authtoken(Base):
     user_id = ForeignKey(User.telegram_id)
     token = Column(String(40))
     created = Column(DateTime)
+    access = Column(CHAR)
 
 Base.metadata.create_all(engine)
 
