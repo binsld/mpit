@@ -9,12 +9,13 @@ class User(Base):
     __tablename__ = 'users'
 
     telegram_id = Column(Integer, primary_key=True)
+    chat_id = Column(Integer)
     telegram_username = Column(String(32), nullable=True)
     fio = Column(String(64), nullable=True)
     phone = Column(BigInteger(), nullable=True)
     coins = Column(SmallInteger, default=0)
-    type = Column(CHAR) # OBAMU классификация (B-anned O-utsider U-ser M-oderator A-dministration)
-    state = Column(SmallInteger) # 1 - ожидание фио
+    type = Column(CHAR) # BOUMA классификация (B-anned O-utsider U-ser M-oderator A-dministration)
+    state = Column(SmallInteger) # 1 - ожидание фио    2 - ожидание телефона    3 - данные подтверждены
 
     def __repr__(self):
        return "<User(telegram_id='%s', telegram_username='%s', fio='%s', phone='%s', coins='%s', type='%s')>" % (
@@ -26,6 +27,7 @@ class Event(Base):
     name = Column(String(48))
     date = Column(DateTime)
     description = Column(String(400))
+    image_url = Column(String(30))
     location = Column(String(60))
     bank = Column(SmallInteger) # Сколько монет можно будет раздать, -1 для неограниченного числа
     def __repr__(self):
@@ -44,6 +46,20 @@ class Registered(Base):
        return "<Registered(user_id='%s', event_id='%s', marked='%s', tag='%s')>" % (
                             self.user_id, self.event_id, self.marked, self.tag)
 
+class Merch(Base):
+    __tablename__ = 'merchs'
+    id = Column(SmallInteger, autoincrement=True, primary_key=True)
+    name = Column(String(40))
+    description = Column(String(200))
+    image_url = Column(String(30))
+
+
+class Authtoken(Base):
+    __tablename__ = "authtokens"
+    id = Column(SmallInteger, autoincrement=True, primary_key=True)
+    user_id = ForeignKey(User.telegram_id)
+    token = Column(String(40))
+    created = Column(DateTime)
 
 Base.metadata.create_all(engine)
 
