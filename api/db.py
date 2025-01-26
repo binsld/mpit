@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, SmallInteger, CHAR, DateTime, Boolean
 from sqlalchemy.orm import sessionmaker, declarative_base
-from api.config import DB_URL
+from config import DB_URL
 
 engine = create_engine(DB_URL, echo=False)
 Base = declarative_base()
@@ -32,6 +32,7 @@ class Event(Base):
 
 class Registered(Base):
     __tablename__ = 'registered'
+    id = Column(SmallInteger, autoincrement=True, primary_key=True)
     user_id = ForeignKey(User.telegram_id)
     event_id = ForeignKey(Event.id)
     marked = Column(Boolean, default=False)
@@ -42,12 +43,9 @@ class Registered(Base):
                             self.user_id, self.event_id, self.marked, self.tag)
 
 
-
 Base.metadata.create_all(engine)
 
 Session = sessionmaker(bind=engine)
 session = Session()
 
 session.commit()
-
-print(session.query(User).all())

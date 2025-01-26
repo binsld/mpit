@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 test_head = "<a href='/'>Главная</a> <a href='/profile'>Профиль</a> <a href='/moderator'>Страничка модератора</a> <a href='/administrator'>Страничка админа</a><br>"
 
 @app.get("/")
 def root():
-    return (test_head+"<p>Здесь у нас находится мерч</p>")
+    return render_template("root.html")
 
 
 @app.get("/logs")

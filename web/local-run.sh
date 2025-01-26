@@ -1,1 +1,1 @@
-flask --app main.py run
+flask --app main.py run -p 7000 -h "0.0.0.0"
