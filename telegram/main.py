@@ -12,7 +12,7 @@ agreement.row(types.KeyboardButton("❌ Отказываюсь ❌"), types.Keyb
 
 def ask_states(user_db_data, msg):
     if user_db_data.state == 1:
-        if bool(re.fullmatch(r"[А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+", msg.text)):
+        if bool(re.fullmatch(r"[А-Я,Ё][а-я,ё]+ [А-Я,Ё][а-я,ё]+ [А-Я,Ё][а-я,ё]+", msg.text)):
             bot.send_message(msg.chat.id, "Отправьте номер телефона")
             db.session.query(db.User).filter(db.User.telegram_id == msg.from_user.id). \
                 update({'state': 2, 'fio':msg.text})
