@@ -11,10 +11,6 @@ def root():
 def events():
     return render_template("events.html")
 
-@app.get("/check")
-def check():
-    return render_template("check.html")
-
-@app.get("/tovarum")
+@app.get("/merch")
 def tovarum():
     return render_template("tovarum.html")
