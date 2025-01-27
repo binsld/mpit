@@ -40,3 +40,8 @@ async def auth(request: Request):
         db.session.commit()
         return f"{identificator}"
     return "Data corrupred"
+
+@app.get("/registered-to-event")
+async def registered_to_event(event_id):
+    registrations = db.session.query(db.Registered).where(db.Registered.event_id == event_id).all()
+    registrations.

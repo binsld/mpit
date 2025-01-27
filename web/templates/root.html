@@ -19,9 +19,21 @@
         document.getElementById("ident").textContent = "Ваш id: "+i_am.id;
         document.getElementById("username").textContent = "Ваш username: "+i_am.username;
         if (app.colorScheme == "light") document.getElementById("theme").textContent = "Светлая тема";
-        console.log(app.initDataUnsafe);
-        app.ready();
 
+        let dat;
+        fetch('https://mpit-api.hexlev.ru/auth', {
+            method: 'POST',
+            body: app.initData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("username").textContent = data;
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+        });
+
+        app.ready();
     </script>
 </body>
 </html>

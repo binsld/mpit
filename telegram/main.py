@@ -51,6 +51,7 @@ def message_get(msg:types.Message):
             db.session.add(db.User(telegram_id=msg.from_user.id, telegram_username=msg.from_user.username, type='O', state=1))
             db.session.commit()
             bot.send_message(msg.chat.id, "Отправьте ФИО", reply_markup=types.ReplyKeyboardRemove())
+
     else:
         ask_states(user_db_data,msg)
 

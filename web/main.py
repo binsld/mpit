@@ -1,26 +1,20 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
-test_head = "<a href='/'>Главная</a> <a href='/profile'>Профиль</a> <a href='/moderator'>Страничка модератора</a> <a href='/administrator'>Страничка админа</a><br>"
+
 
 @app.get("/")
 def root():
-    return render_template("root.html")
+    return render_template("events.html")
 
+@app.get("/events")
+def events():
+    return render_template("events.html")
 
-@app.get("/logs")
-def logs():
-    return (test_head+"<p>Здесь у нас находятся логи</p>")
+@app.get("/check")
+def check():
+    return render_template("check.html")
 
-@app.get("/profile")
-def profile():
-    return (test_head+"<p>Здесь у нас находится профиль пользователя</p>")
-
-@app.get("/moderator")
-def moderator():
-    return (test_head+"<p>Здесь у нас находится панель управления модератора</p>")
-
-
-@app.get("/administrator")
-def administrator():
-    return (test_head+"<p>Здесь у нас находится панель управления администратора</p><br><a href='/logs'>Логи</a>")
+@app.get("/tovarum")
+def tovarum():
+    return render_template("tovarum.html")

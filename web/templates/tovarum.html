@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tovarum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="bg-[#16131B] rounded-[18px] w-1/3 p-6 mx-[15px] my-[20px] min-w-[175px]">
+        <div class="w-full h-1/2 overflow-hidden mb-[20px] flex justify-center">
+          <img
+            src="\ab.jpg"
+            alt="Картинка1"
+            class="object-cover w-[20vw] h-[20vw] min-w-[125px] min-h-[125px] max-w-[200px] max-h-[200px] border border-white border-[1px] rounded-[20px]"
+          />
+        </div>
+        <div class="justify-between w-full">
+          <div class="flex justify-between items-center">
+            <div class="flex flex-row text-white text-2xl">
+              <p>100</p>
+              <img src="" alt="coins" width="16px" height="16px">
+            </div>
+            <div class="text-[#c627e0] flex text-sm italic">
+              <p>255</p>
+              <p class="mx-[4px]">ед.</p>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <button onclick="toggleBlock()"
+              class="bg-white text-[#c627e0] rounded-[18px] px-6 py-2 m-[10px] text-sm font-semibold">
+                Подробнее
+            </button>
+          </div>
+        </div>
+      </div>    
+
+    <!-- Скрытый блок -->
+    <div
+  id="hidden-block1"
+  class="w-11/12 h-[90vh] bg-black mt-4 rounded-[18px] p-6 opacity-0 transition-opacity duration-300 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+  <!-- Крестик -->
+  <div class="absolute top-6 right-6 cursor-pointer text-white text-4xl z-30 pointer-events-auto" onclick="toggleBlock()">
+    ×
+  </div>
+  <div class="w-full pl-6 flex-col">
+    <div class="w-full h-1/3 overflow-hidden flex justify-center relative">
+      <div class="h-[20vw] min-w-[80px] min-h-[200px] max-w-[900px] max-h-[300px] flex justify-center">
+        <!-- Первая картинка -->
+        <img
+          src="\ab.jpg"
+          alt="Картинка1"
+          class="object-cover w-[20vw] h-[20vw] min-w-[110px] min-h-[110px] max-w-[300px] max-h-[300px] rounded-[200px] border border-white border-[1px] mx-[-10px]"
+        />
+        <!-- Вторая картинка -->
+        <img
+          src="\ab.jpg"
+          alt="Картинка2"
+          class="object-cover w-[20vw] h-[20vw] min-w-[110px] min-h-[110px] max-w-[300px] max-h-[300px] rounded-[200px] border border-white border-[1px] mx-[-10px]"
+        />
+        <img
+          src="\ab.jpg"
+          alt="Картинка3"
+          class="object-cover w-[20vw] h-[20vw] min-w-[110px] min-h-[110px] max-w-[300px] max-h-[300px] rounded-[200px] border border-white border-[1px] mx-[-10px]"
+        />
+      </div>
+    </div>
+    <div class="rounded-lg p-4 flex justify-between items-center">
+        <!-- Левая часть: цена и количество -->
+        <div class="text-white">
+          <div class="flex flex-row text-white"><p class="text-4xl font-semibold">100</p><img src="" alt="coins" width="16px" height="16px"></div>
+          <p class="text-base text-[#c627e0] italic">255 ед.</p>
+        </div>
+      
+        <!-- Правая часть: выпадающий список -->
+        <div class="relative">
+          <select class="bg-black text-white rounded-lg px-4 py-2 appearance-none focus:outline-none border-white border-[1px]">
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+          </select>
+          <!-- Иконка стрелки для выпадающего списка -->
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    <!-- Текст -->
+    <div class="w-full">
+      <h2 class="text-white text-2xl font-bold max-w-[1200px]:text-2xl max-w-[900px]:text-xl max-w-[600px]:text-lg">Название</h2>
+      <p class="text-white mt-1 text-base lg:text-xl md:text-base sm:text-sm w-5/6">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut афлрващфашгпфгапфырвпаф ывпарлфывма рыфвада ыфрвмаыолв фр
+      </p>
+    </div>
+    <!-- Кнопка -->
+    <div class="flex justify-center mt-6">
+      <button onclick="toggleBlock()" class="bg-white text-[#c627e0] rounded-[18px] px-6 py-2 text-sm font-semibold">
+        Купить
+      </button>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Скрипт для отображения/скрытия окошка -->
+<script>
+  const moreButton = document.getElementById('more-button');
+  const moreUsers = document.getElementById('more-users');
+  let hideTimeout;
+
+  // Показ окошка при наведении на кнопку
+  moreButton.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimeout); // Отменяем таймер скрытия
+    moreUsers.style.pointerEvents = 'auto'; // Включаем взаимодействие
+    moreUsers.style.opacity = '1'; // Плавное появление
+  });
+
+  // Скрытие окошка с задержкой при уходе с кнопки
+  moreButton.addEventListener('mouseleave', () => {
+    hideTimeout = setTimeout(() => {
+      if (!moreUsers.matches(':hover')) {
+        moreUsers.style.opacity = '0'; // Плавное исчезновение
+        moreUsers.style.pointerEvents = 'none'; // Отключаем взаимодействие
+      }
+    }, 200); // Задержка перед скрытием
+  });
+
+  // Окошко не скрывается, если мышка наведена на него
+  moreUsers.addEventListener('mouseenter', () => {
+    clearTimeout(hideTimeout); // Отменяем таймер скрытия
+  });
+
+  moreUsers.addEventListener('mouseleave', () => {
+    hideTimeout = setTimeout(() => {
+      moreUsers.style.opacity = '0'; // Плавное исчезновение
+      moreUsers.style.pointerEvents = 'none'; // Отключаем взаимодействие
+    }, 200); // Задержка перед скрытием
+  });
+
+  // Функция для управления видимостью основного блока
+  function toggleBlock() {
+    const block = document.getElementById('hidden-block1');
+    block.classList.toggle('opacity-0');
+    block.classList.toggle('pointer-events-none');
+  }
+</script>
+</script>
+<div id="hidden-block-opacity1" class="w-full h-full bg-black opacity-0 transition-opacity duration-300 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-2 pointer-events-none"></div>
+
+<script>
+  function toggleBlock() {
+    const mainblock = document.getElementById('hidden-block1');
+    const opacityblock = document.getElementById('hidden-block-opacity1');
+    if (mainblock.classList.contains('opacity-0')) {
+      mainblock.classList.remove('opacity-0');
+      mainblock.classList.remove('z-[-2]');
+      mainblock.classList.remove('pointer-events-none')
+      mainblock.classList.add('opacity-100');
+      mainblock.classList.add('z-50');
+      opacityblock.classList.remove('opacity-0');
+      opacityblock.classList.remove('z-[-1]');
+      opacityblock.classList.remove('pointer-events-none')
+      opacityblock.classList.add('opacity-40');
+      opacityblock.classList.add('z-49');
+      
+    } else {
+      mainblock.classList.remove('opacity-100');
+      mainblock.classList.remove('z-50');
+      mainblock.classList.add('opacity-0');
+      mainblock.classList.add('z-[-2]');
+      mainblock.classList.add('pointer-events-none')
+      opacityblock.classList.remove('opacity-40');
+      opacityblock.classList.remove('z-49');
+      opacityblock.classList.add('opacity-0');
+      opacityblock.classList.add('z-[-1]');
+      opacityblock.classList.add('pointer-events-none')
+    }
+  }
+</script>
+</body>
+</html>

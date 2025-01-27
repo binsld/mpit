@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tablet</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Таблица с Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="fixed bg-[#000000] w-full h-full z-[-6]"></div>
+    <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] z-[-3]"><img src="\Pautin-1.png" alt=""></div>
+    <div class="mx-6">
+        <table class="min-w-full bg-[rgba(22,19,27,0.5)] border border-white rounded-lg shadow-sm fixed top-0 right-0 z-[10]">
+            <thead class="bg-black">
+                <tr>
+                  <th class="px-6 py-3 text-left text-sm font-semibold text-white">Ф. И. О.</th>
+                  <th class="px-6 py-3 text-left text-sm font-semibold text-white">Telegram</th>
+                  <th class="px-6 py-3 text-left text-sm font-semibold text-white">Телефон</th>
+                  <th class="px-6 py-3 text-left text-sm font-semibold text-white">Отметить</th>
+                </tr>
+              </thead>
+        </table>
+    </div>
+    <div class="mb-[20px]"></div>
+    <div class="p-6">
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-[rgba(22,19,27,0.5)] border border-white rounded-lg shadow-sm">
+              <tbody class="divide-y divide-gray-200">
+                <script>
+                  // Цикл для генерации строк таблицы
+                  for (let i = 1; i <= 30; i++) {
+                    document.write(`
+                      <tr class="hover:bg-[rgba(64,23,74,0.5)] transition-colors">
+                        <td class="px-6 py-4 text-sm text-white backdrop-blur-sm">Ф И О</td>
+                        <td class="px-6 py-4 text-sm text-white backdrop-blur-sm">@user${i}</td>
+                        <td class="px-6 py-4 text-sm text-white backdrop-blur-sm">+7 (999) 123-45-67</td>
+                        <td class="px-6 py-4 text-sm text-white backdrop-blur-sm">
+                          <input type="checkbox" class="w-4 h-4 rounded border-black text-black focus:ring-black">
+                        </td>
+                      </tr>
+                    `);
+                  }
+                </script>
+              </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Добавьте больше строк по мере необходимости -->
+  </div>
+</body>
+</html>
+</body>
+</html>
