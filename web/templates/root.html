@@ -10,29 +10,34 @@
 </head>
 <body>
     <p>Hello, world</p>
-    <p id="ident">Ваш id</p>
-    <p id="username">Ваш username</p>
-    <p id="theme">Тёмная тема</p>
+    <p id="progress">Идёт проверка прав доступа...</p>
     <script>
         app.ready();
-        const i_am = app.initDataUnsafe.user;
-        document.getElementById("ident").textContent = "Ваш id: "+i_am.id;
-        document.getElementById("username").textContent = "Ваш username: "+i_am.username;
-        if (app.colorScheme == "light") document.getElementById("theme").textContent = "Светлая тема";
 
-        let dat;
         fetch('https://mpit-api.hexlev.ru/auth', {
             method: 'POST',
             body: app.initData
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById("username").textContent = data;
+                console.log(data);
+                console.log(data.length);
+                if (data.length == 42)
+                {
+                    document.cookie = "token="+data.split()[0]+"; max-age=86400; SameSite=lax"
+                    document.getElementById("progress").textContent = "Доступ разрешён";
+                    window.location.href = 'https://mpit.hexlev.ru/events';
+                }
+                else
+                {
+                    document.getElementById("progress").textContent = "Регистрация провалена";
+                    app.showAlert("Вы не зарегистрированны");
+                    app.close();
+                }
             })
             .catch(error => {
                 console.error('Ошибка:', error);
         });
-
         app.ready();
     </script>
 </body>
