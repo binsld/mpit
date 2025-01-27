@@ -8,6 +8,9 @@
 </head>
 <body class="bg-[#16131B] flex flex-col justify-center items-center">
 
+
+  <div style="z-index:-1" class="fixed -right-[500px] -bottom-[350px] w-[800px] h-[800px]"><img src="\static\Pautin-2.png" alt=""></div>
+  <div style="z-index:-1" class="fixed left-[-550px] -bottom-[-250px] w-[1000px] h-[1000px]"><img src="\static\Pautin-2.png" alt=""></div>
   <header class="fixed w-full top-0 left-0">
     <!-- Градиентный фон -->
     <div class="fixed w-full h-1/6 bg-gradient-to-b from-[#16131b] to-transparent top-0 left-0 z-[-1]"></div>
@@ -19,7 +22,7 @@
     <div class="fixed top-0 left-0 flex items-center p-[10px] z-10">
         <div class="bg-[#000000] rounded-[50px] text-white px-4 py-2 flex items-center">
             <img src="\static\Coin.png" alt="coin" class="w-[30px] h-[30px]">
-            <div class="mx-[10px] text-xl">1234</div>
+            <div class="mx-[10px] text-xl">0</div>
         </div>
     </div>
 
@@ -44,7 +47,7 @@
     <!-- Левая часть: изображение -->
     <div class="w-[25vw] min-w-[80px] max-w-[300px] h-[25vw] min-h-[80px] max-h-[300px] overflow-hidden rounded-[20px]
                 max-w-[1200px]:w-full max-w-[1200px]:h-[20vh]">
-      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fvolgograd.ruc.su%2Fannouncements%2Fdetail%2F154561%2F&psig=AOvVaw2OXzgRWINUlqqShB-MOmBy&ust=1738036725079000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCp_8aBlYsDFQAAAAAdAAAAABAE" alt="Картинка" class="object-cover w-full h-full">
+      <img src="http://www.cs.vsu.ru/wp-content/uploads/2023/10/2023-10-19_15-54-47.png" alt="Картинка" class="object-cover w-full h-full">
     </div>
     <!-- Правая часть: текст -->
     <div class="w-2/3 pl-6 flex flex-col justify-between
@@ -407,8 +410,196 @@
         }
       </script>
   </div>
-<div style="z-index:-1" class="fixed -right-[500px] -bottom-[350px] w-[800px] h-[800px]"><img src="\static\Pautin-2.png" alt=""></div>
-<div style="z-index:-1" class="fixed left-[-550px] -bottom-[-250px] w-[1000px] h-[1000px]"><img src="\static\Pautin-2.png" alt=""></div>
+
+<div class="huge-block">
+    <div class="bg-black rounded-[18px] w-10/12 min-h-[30vh] h-auto p-6 flex flex-row
+              max-w-[1200px]:flex-col max-w-[1200px]:items-center">
+    <!-- Левая часть: изображение -->
+    <div class="w-[25vw] min-w-[80px] max-w-[300px] h-[25vw] min-h-[80px] max-h-[300px] overflow-hidden rounded-[20px]
+                max-w-[1200px]:w-full max-w-[1200px]:h-[20vh]">
+      <img src="https://neimark-it.ru/images/tild3933-6666-4339-a633-303630643166__photo.png" alt="Картинка" class="object-cover w-full h-full">
+    </div>
+    <!-- Правая часть: текст -->
+    <div class="w-2/3 pl-6 flex flex-col justify-between
+                max-w-[1200px]:w-full max-w-[1200px]:pl-0 max-w-[1200px]:mt-4">
+      <div>
+        <h2 class="text-white text-2xl font-bold
+                   max-w-[1200px]:text-2xl max-w-[900px]:text-xl max-w-[600px]:text-lg">Неймарк IT-Академия</h2>
+        <p class="text-gray-400 text-sm italic mt-0
+                  max-w-[1200px]:text-sm max-w-[900px]:text-xs">05.02.2025</p>
+        <p class="text-white mt-4 text-base
+                  max-w-[1200px]:text-base max-w-[900px]:text-sm max-w-[600px]:text-xs">
+          Неймарк IT-академия по Олимпиадному программированию
+        </p>
+      </div>
+      <div class="flex justify-end mt-6
+                  max-w-[1200px]:justify-center">
+        <button onclick="toggleBlock3()"
+                class="bg-white text-[#FF5338] rounded-[18px] px-6 py-2 text-sm font-semibold">
+          Подробнее
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="bg-[#c627e0] w-10/12 h-[0.5vh] rounded-[18px] my-[2vh]
+              max-w-[1200px]:my-[1vh]"></div>
+
+      <!-- Скрытый блок -->
+      <div
+    id="hidden-block3"
+    class="w-11/12 h-[90vh] bg-black mt-4 rounded-[18px] p-6 opacity-0 transition-opacity duration-300 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+    <!-- Крестик -->
+    <div class="absolute top-6 right-6 cursor-pointer text-white text-4xl z-30 pointer-events-auto" onclick="toggleBlock3()">
+      ×
+    </div>
+    <div class="w-full pl-6 flex-col">
+      <div class="w-full h-1/3 overflow-hidden flex justify-center relative">
+        <div class="h-[20vw] min-w-[80px] min-h-[80px] max-w-[200px] max-h-[200px] relative">
+          <!-- Первая картинка -->
+          <img
+            src="https://neimark-it.ru/images/tild3239-3466-4162-b337-653065663565____2023-03-31__220832.png"
+            alt="Картинка1"
+            class="object-cover w-[20vw] h-[20vw] min-w-[80px] min-h-[80px] max-w-[200px] max-h-[200px] rounded-[100px] border border-white border-[1px] absolute left-[20px] left-1/3 transform -translate-x-1/2"
+          />
+          <!-- Вторая картинка -->
+          <img
+            src="https://neimark-it.ru/images/tild3933-3863-4661-a665-663638303861__img_5647_2.jpg"
+            alt="Картинка2"
+            class="object-cover w-[20vw] h-[20vw] min-w-[80px] min-h-[80px] max-w-[200px] max-h-[200px] rounded-[100px] border border-white border-[1px] absolute left-2/3 transform -translate-x-1/2"
+          />
+        </div>
+      </div>
+      <!-- Текст -->
+      <div class="w-full">
+        <h2 class="text-white text-2xl font-bold text-center max-w-[1200px]:text-2xl max-w-[900px]:text-xl max-w-[600px]:text-lg">Академия по олимпиадному программированию</h2>
+        <p class="text-gray-400 text-sm italic mt-0 text-center max-w-[1200px]:text-sm max-w-[900px]:text-xs">05.02.2025</p>
+        <p class="text-white mt-1 text-base text-center max-w-[1200px]:text-base max-w-[900px]:text-sm max-w-[600px]:text-xs text-base :text-sm md:text-base lg:text-xl">
+
+
+В течение недели школьники, которые прошли предварительный отбор, будут заниматься олимпиадным программированием, решать задачи, участвовать в контестах. Обучение будут проводить эксперты и педагоги, участвующие или принимавшие участие в прошлом в соревнованиях по олимпиадному программированию и работающие в ведущих ИТ компаниях.
+
+Все участники ИТ-Академии по олимпиадному программированию усовершенствуют свои знания в сфере программирования, повысят опыт прохождения контестов, а также прокачают свои soft skills на дополнительных занятиях. Резидентов Академии ждут практические и лекционные занятия по теории чисел, теории графов и структурам данных. Помимо этого, резиденты узнают все о создании ИТ-кампуса мирового уровня НЕЙМАРК в Нижнем Новгороде и присоединятся к сильному сообществу единомышленников. Итогом программы станет контест, в котором все участники смогут применить и проверить на практике полученные навыки.
+
+        </p>
+      </div>
+      <!-- Серая надпись и список пользователей -->
+      <div class="mt-4 text-center">
+        <div class="flex justify-center space-x-2 mt-2">
+          <p class="text-gray-400 text-sm m">Также</p>
+          <p class="text-gray-400 text-sm m">записались:</p>
+          <a href="https://t.me/user1" class="text-white text-sm hover:underline">@user1</a>
+          <a href="https://t.me/user2" class="text-white text-sm hover:underline">@user2</a>
+          <!-- Кнопка +ещё22 -->
+          <div class="relative">
+            <button id="more-button3" class="text-white text-sm flex">
+              <div>+ещё</div>
+              <div>22</div>
+            </button>
+            <!-- Окошко с пользователями -->
+            <div
+              id="more-users3"
+              class="absolute bottom-full left-1/2 w-[500px] bg-black rounded-lg p-4 mb-[12px] shadow-lg z-20 transform -translate-x-1/2 opacity-0 transition-opacity duration-300 pointer-events-none border-white border-[1px] lg:-translate-x-[250px] md:-translate-x-[300px] sm:-translate-x-[400px] -translate-x-[360px]">
+              <div class="grid grid-cols-6 gap-x-[1px] md:gap-x-4 md:gap-x-2 lg:gap-x-6 lg:gap-y-3">
+                <!-- Список пользователей -->
+                <script>
+                 //Здесь вставь цикл который показывает кол. доп. участников и их ссылки с никами зарег на событие
+                 //Если ник длиннее 5 симв. - обрезай и ставь когда выводишь ...
+                  for (let i = 1; i <= 30; i++) {
+                    document.write(`
+                      <a href="https://t.me/user${i}" class="text-white text-sm hover:underline break-words min-w-[80px] text-base sm:text-[12px] md:text-sm lg:text-base">@user${i}</a>
+                    `);
+                  }
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Кнопка -->
+      <div class="flex justify-center mt-6">
+        <button onclick="toggleBlock3()" class="bg-white text-[#FF5338] rounded-[18px] px-6 py-2 text-sm font-semibold">
+          Записаться!
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Скрипт для отображения/скрытия окошка -->
+  <script>
+    const moreButton = document.getElementById('more-button3');
+    const moreUsers = document.getElementById('more-users3');
+    let hideTimeout;
+
+    // Показ окошка при наведении на кнопку
+    moreButton.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout); // Отменяем таймер скрытия
+      moreUsers.style.pointerEvents = 'auto'; // Включаем взаимодействие
+      moreUsers.style.opacity = '1'; // Плавное появление
+    });
+
+    // Скрытие окошка с задержкой при уходе с кнопки
+    moreButton.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(() => {
+        if (!moreUsers.matches(':hover')) {
+          moreUsers.style.opacity = '0'; // Плавное исчезновение
+          moreUsers.style.pointerEvents = 'none'; // Отключаем взаимодействие
+        }
+      }, 200); // Задержка перед скрытием
+    });
+
+    // Окошко не скрывается, если мышка наведена на него
+    moreUsers.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimeout); // Отменяем таймер скрытия
+    });
+
+    moreUsers.addEventListener('mouseleave', () => {
+      hideTimeout = setTimeout(() => {
+        moreUsers.style.opacity = '0'; // Плавное исчезновение
+        moreUsers.style.pointerEvents = 'none'; // Отключаем взаимодействие
+      }, 200); // Задержка перед скрытием
+    });
+
+    // Функция для управления видимостью основного блока
+    function toggleBlock3() {
+      const block = document.getElementById('hidden-block3');
+      block.classList.toggle('opacity-0');
+      block.classList.toggle('pointer-events-none');
+    }
+  </script>
+  </script>
+      <div id="hidden-block-opacity3" class="w-full h-full bg-black opacity-0 transition-opacity duration-300 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-2 pointer-events-none"></div>
+
+      <script>
+        function toggleBlock3() {
+          const mainblock = document.getElementById('hidden-block3');
+          const opacityblock = document.getElementById('hidden-block-opacity2');
+          if (mainblock.classList.contains('opacity-0')) {
+            mainblock.classList.remove('opacity-0');
+            mainblock.classList.remove('z-[-2]');
+            mainblock.classList.remove('pointer-events-none')
+            mainblock.classList.add('opacity-100');
+            mainblock.classList.add('z-50');
+            opacityblock.classList.remove('opacity-0');
+            opacityblock.classList.remove('z-[-1]');
+            opacityblock.classList.remove('pointer-events-none')
+            opacityblock.classList.add('opacity-40');
+            opacityblock.classList.add('z-49');
+
+          } else {
+            mainblock.classList.remove('opacity-100');
+            mainblock.classList.remove('z-50');
+            mainblock.classList.add('opacity-0');
+            mainblock.classList.add('z-[-2]');
+            mainblock.classList.add('pointer-events-none')
+            opacityblock.classList.remove('opacity-40');
+            opacityblock.classList.remove('z-49');
+            opacityblock.classList.add('opacity-0');
+            opacityblock.classList.add('z-[-1]');
+            opacityblock.classList.add('pointer-events-none')
+          }
+        }
+      </script>
+  </div>
 
 </body>
 </html>
