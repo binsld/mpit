@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.get("/")
 def root():
-    return render_template("events.html")
+    return render_template("root.html")
 
 @app.get("/events")
 def events():

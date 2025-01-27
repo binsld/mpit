@@ -38,10 +38,9 @@ async def auth(request: Request):
                     +'0'*(10-len(hex(identificator)))+hex(identificator)[2:])
         db.session.add(db.Authtoken(user_id=identificator, created=datetime.now(), token=newtoken, access=user.type))
         db.session.commit()
-        return f"{identificator}"
+        return f"{newtoken} {user.type}"
     return "Data corrupred"
 
 @app.get("/registered-to-event")
 async def registered_to_event(event_id):
     registrations = db.session.query(db.Registered).where(db.Registered.event_id == event_id).all()
-    registrations.
